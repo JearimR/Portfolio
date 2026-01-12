@@ -1,0 +1,786 @@
+*{
+   padding: 0;
+   margin: 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+body{
+   background-image: url(bgjearim.JPG);
+   background-size: cover;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+nav{
+   padding: 8px;
+  margin-top: 0px;
+  text-align: center;
+}
+.menu_bar{
+   display: none;
+}
+
+header{
+   width:100%;
+   background-color: #e2aecc;
+  color: #fff;
+  padding: 0rem 0;
+  font-family: 'Century Gothic', sans-serif; font-size: 15px;
+  
+  
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+header nav{
+   background: #E2AECC;
+   z-index: 10000;
+   max-width: 1000px;
+   width: 95%;
+   margin: 0px auto;
+   font-family: "Century Gothic";
+   font-weight: bold;
+}
+header nav ul{
+   list-style: none;
+}
+
+header nav ul li{
+   display: inline-block;
+   position: relative    
+   
+}
+
+header nav ul li:hover{
+   background-color: #aa5b96;
+}
+
+header nav ul li a{
+   color: white;
+   display: block;
+   text-decoration: none;
+   padding: 20px;
+}
+
+header nav ul li a span{
+   margin-right:  10px; ;
+}
+
+header nav ul li:hover .children{
+   display: block;
+
+}
+
+header nav ul li .children{
+   display: none;
+   background: #E2AECC;
+   position: absolute;
+   width: 150%;
+   z-index: 1000%;
+}
+
+header nav ul li .children li{
+display: block;
+overflow: hidden;
+border-bottom: 1px solid rgba(255, 255, 255, 255,.5);
+}
+
+header nav ul li .children li a{
+   display: block;
+}
+
+header nav ul li .children li a span{
+   float: right;
+   position: relative;
+   top: 3px;
+   margin-right: 0;
+   margin-left: 10px;
+}
+
+header nav ul li .caret{
+   position: relative;
+   top: 3px;
+   margin-left: 10px;
+   margin-right: 0px;
+}
+@media screen and (max-width:800px){
+   body {
+       padding-top: 80px;
+   }
+
+   .menu_bar{
+       display: block;
+       width: 100%;
+       position: fixed;
+       top: 0;
+       background-color: #81086d;
+   }
+
+   .menu_bar .bt-menu{
+      display: block;
+      padding: 20px;
+      color: white;
+      overflow: hidden;
+      font-size: 25px;
+      font-family: "Century Gothic";
+        font-weight:bold ;
+        text-decoration: none;
+   }
+
+   .menu_bar span{
+       float: right;
+       font-size: 40px;
+   }
+
+   header nav {
+       width: 80%;
+       height: calc(100% - 80px);
+       position: fixed;
+       right: 100%;
+       margin: 0;
+       overflow: scroll;
+   }
+
+   header nav ul li{
+       display: block;
+       border-bottom: 1px solid rgba(255, 255, 255, 255,.5);
+   }
+
+   header nav ul li a{
+       display: block;
+   }
+   header nav ul li:hover .children{
+       display: none;
+   }
+
+   header nav ul li .children{
+       width: 100%;
+       position: relative;
+   }
+   header nav ul li .children li a{
+       margin-left: 20px;
+   }
+   header nav ul li .caret{
+       float: right;
+   }
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Racing+Sans+One&family=Staatliches&display=swap');
+
+@font-face {
+   font-family: "Century Gothic", sans-serif;
+   src: url(Webfonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf) format(truetype);
+}
+
+.hero {
+	background: transparent;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.texto {
+	width: 100%;
+	color: transparent;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 60px;
+	font-weight: bold;
+    text-decoration: none;
+   -webkit-text-stroke: #000000 1px;
+   
+
+	background-image: url('ENMANTENCION.JPEG');
+	background-size: auto;
+	background-position-y: 15000px;
+	
+	background-clip: text;
+	-webkit-background-clip: text;
+
+	-webkit-text-fill-color: transparent;
+   }
+
+
+
+
+   .player{
+      background-color: #aa5b96;
+      display: grid;
+      grid-template-columns: 48px 1fr 48px;
+      grid-gap: 16px;
+      padding: 5px 20px;
+      position: relative;
+      border-radius: 64px;
+      text-align: center;
+   }
+  
+   .control,#current {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-block: 4px;
+  }
+  
+  #playbtn {
+      font-size: 20px;
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: white;
+      cursor: pointer;
+  }
+  
+  #playbtn:hover {
+      -webkit-text-fill-color: white;
+  }
+  
+  .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+  }
+  
+  #current {
+      text-align: right;
+  }
+  .bar {
+      --space: -4px;
+      background-color: #24242424;
+      overflow: hidden;
+      left: var(--space);
+      right: var(--space);
+      top: var(--space);
+      bottom: var(--space);
+      position: absolute;
+      border-radius: 64px;
+      z-index: -2;
+  }
+  
+  
+  #progress {
+      display: blcok;
+      width: var(--progress,0%);
+      background-color: white;
+      transition: all 1s linear;
+      height: 100%;
+  }
+
+
+
+
+
+  .slider {
+   max-width: 1000px;
+   margin: 0 auto;
+ 
+ }
+ .slick-slide {
+   margin: 0 5px;
+ }
+ .slick-list {
+   margin: 0px -5px 0px -5px;
+ }
+ button.slick-next, button.slick-next:hover {
+   position: absolute;
+   top: 41%;
+   right: 54px;
+   width: 47px;
+   height: 75px;
+   background-image: url("http://maggiesadler.com/wp-content/uploads/2015/10/left-right-arrow.png");
+   background-size: 95px;
+ }
+ button.slick-prev, button.slick-prev:hover {
+   position: absolute;
+   top: 41%;
+   left: 15px;
+   z-index: 1;
+   width: 47px;
+   height: 75px;
+   background-image: url("http://maggiesadler.com/wp-content/uploads/2015/10/left-right-arrow.png");
+   background-size: 95px;
+       background-position-x: right;
+ }
+ .slick-prev:before, .slick-next:before {
+   font-size: 70px;
+   color: #EA8496;
+   line-height: inherit;
+   font-weight: bold;
+ }
+
+ @media (max-width: 800px) {
+    .slider img {
+        width: 80%;
+      }
+
+      .texto {
+        width: 100%;
+        color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 60px;
+        font-weight: bold;
+        text-decoration: none;
+       -webkit-text-stroke: #000000 1px;
+       
+    
+        background-image: url('bgjearim.JPG');
+        background-size: auto;
+        background-position-y: 150px;
+        
+        background-clip: text;
+        -webkit-background-clip: text;
+    
+        -webkit-text-fill-color: transparent;
+       }
+ }
+ 
+ @media (max-width: 600px) {
+    .slider img {
+        width: 100%;
+      }
+
+      .texto {
+        width: 100%;
+        color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 60px;
+        font-weight: bold;
+        text-decoration: none;
+       -webkit-text-stroke: #000000 1px;
+       
+    
+        background-image: url('bgjearim.JPG');
+        background-size: auto;
+        background-position-y: 150px;
+        
+        background-clip: text;
+        -webkit-background-clip: text;
+    
+        -webkit-text-fill-color: transparent;
+       }
+ }
+
+
+ /* Slick Slider Styles -- Provided by https://kenwheeler.github.io/slick/ */
+ /* Slider */
+ .slick-slider
+ {
+     position: relative;
+ 
+     display: block;
+ 
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+ 
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+ 
+     -webkit-touch-callout: none;
+     -khtml-user-select: none;
+     -ms-touch-action: pan-y;
+         touch-action: pan-y;
+     -webkit-tap-highlight-color: transparent;
+ }
+ 
+ .slick-list
+ {
+     position: relative;
+ 
+     display: block;
+     overflow: hidden;
+ 
+     margin: 0;
+     padding: 0;
+ }
+ .slick-list:focus
+ {
+     outline: none;
+ }
+ .slick-list.dragging
+ {
+     cursor: pointer;
+     cursor: hand;
+ }
+ 
+ .slick-slider .slick-track,
+ .slick-slider .slick-list
+ {
+     -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+         -ms-transform: translate3d(0, 0, 0);
+          -o-transform: translate3d(0, 0, 0);
+             transform: translate3d(0, 0, 0);
+ }
+ 
+ .slick-track
+ {
+     position: relative;
+     top: 0;
+     left: 0;
+ 
+     display: block;
+ }
+ .slick-track:before,
+ .slick-track:after
+ {
+     display: table;
+ 
+     content: '';
+ }
+ .slick-track:after
+ {
+     clear: both;
+ }
+ .slick-loading .slick-track
+ {
+     visibility: hidden;
+ }
+ 
+ .slick-slide
+ {
+     display: none;
+     float: left;
+ 
+     height: 100%;
+     min-height: 1px;
+ }
+ [dir='rtl'] .slick-slide
+ {
+     float: right;
+ }
+ .slick-slide img
+ {
+     display: block;
+ }
+ .slick-slide.slick-loading img
+ {
+     display: none;
+ }
+ .slick-slide.dragging img
+ {
+     pointer-events: none;
+ }
+ .slick-initialized .slick-slide
+ {
+     display: block;
+ }
+ .slick-loading .slick-slide
+ {
+     visibility: hidden;
+ }
+ .slick-vertical .slick-slide
+ {
+     display: block;
+ 
+     height: auto;
+ 
+     border: 1px solid transparent;
+ }
+ .slick-arrow.slick-hidden {
+     display: none;
+ }
+
+ /* Slider */
+ .slick-loading .slick-list
+ {
+     background: #fff url('http://maggiesadler.com/wp-content/uploads/2015/10/ajax-loader.gif') center center no-repeat;
+ }
+ 
+ /* Icons */
+ @font-face
+ {
+     font-family: 'slick';
+     font-weight: normal;
+     font-style: normal;
+ 
+     src: url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.eot');
+     src: url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.eot?#iefix') format('embedded-opentype'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.woff') format('woff'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.ttf') format('truetype'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.svg#slick') format('svg');
+ }
+ /* Arrows */
+ .slick-prev,
+ .slick-next
+ {
+     font-size: 0;
+     line-height: 0;
+ 
+     position: absolute;
+     top: 50%;
+ 
+     display: block;
+ 
+     width: 20px;
+     height: 20px;
+     margin-top: -10px;
+     padding: 0;
+ 
+     cursor: pointer;
+ 
+     color: transparent;
+     border: none;
+     outline: none;
+     background: transparent;
+ }
+ .slick-prev:hover,
+ .slick-prev:focus,
+ .slick-next:hover,
+ .slick-next:focus
+ {
+     color: transparent;
+     outline: none;
+     background: transparent;
+ }
+ .slick-prev:hover:before,
+ .slick-prev:focus:before,
+ .slick-next:hover:before,
+ .slick-next:focus:before
+ {
+     opacity: 1;
+ }
+ .slick-prev.slick-disabled:before,
+ .slick-next.slick-disabled:before
+ {
+     opacity: .25;
+ }
+ 
+ .slick-prev:before,
+ .slick-next:before
+ {
+     font-family: 'slick';
+     font-size: 20px;
+     line-height: 1;
+ 
+     opacity: .75;
+     color: white;
+ 
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+ 
+ .slick-prev
+ {
+     left: -25px;
+ }
+ [dir='rtl'] .slick-prev
+ {
+     right: -25px;
+     left: auto;
+ }
+ .slick-prev:before
+ {
+     content: '';
+ }
+ [dir='rtl'] .slick-prev:before
+ {
+     content: '';
+     font-weight: bold;
+     font-size: 20px;
+ }
+ 
+ .slick-next
+ {
+     right: -25px;
+ }
+ [dir='rtl'] .slick-next
+ {
+     right: auto;
+     left: -25px;
+ }
+ .slick-next:before
+ {
+     content: '';
+ }
+ [dir='rtl'] .slick-next:before
+ {
+     content: '';
+ }
+ 
+ /* Dots */
+ .slick-slider
+ {
+     margin-bottom: 30px;
+ }
+ 
+ .slick-dots
+ {
+     position: absolute;
+     bottom: -45px;
+ 
+     display: block;
+ 
+     width: 100%;
+     padding: 0;
+ 
+     list-style: none;
+ 
+     text-align: center;
+ }
+ .slick-dots li
+ {
+     position: relative;
+ 
+     display: inline-block;
+ 
+     width: 20px;
+     height: 20px;
+     margin: 0 5px;
+     padding: 0;
+ 
+     cursor: pointer;
+ }
+ .slick-dots li button
+ {
+     font-size: 0;
+     line-height: 0;
+ 
+     display: block;
+ 
+     width: 20px;
+     height: 20px;
+     padding: 5px;
+ 
+     cursor: pointer;
+ 
+     color: transparent;
+     border: 0;
+     outline: none;
+     background: transparent;
+ }
+ .slick-dots li button:hover,
+ .slick-dots li button:focus
+ {
+     outline: none;
+ }
+ .slick-dots li button:hover:before,
+ .slick-dots li button:focus:before
+ {
+     opacity: 1;
+ }
+ .slick-dots li button:before
+ {
+     font-family: 'slick';
+     font-size: 6px;
+     line-height: 20px;
+ 
+     position: absolute;
+     top: 0;
+     left: 0;
+ 
+     width: 20px;
+     height: 20px;
+ 
+     content: '•';
+     text-align: center;
+ 
+     opacity: .25;
+     color: black;
+ 
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+ .slick-dots li.slick-active button:before
+ {
+     opacity: .75;
+     color: black;
+ }
+
+
+
+ footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:  transparent;
+    height: auto;
+    width: 100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 0px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 200px;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 30px;
+    cursor: pointer;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.socials a i{
+    font-size: 40px;
+    transition: color .4s ease;
+    cursor: pointer;
+
+}
+.socials a:hover i{
+    color:#b7e2ae;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
+h6{
+    position: fixed;
+    margin-top: 150px;
+}
+
+.dot{
+    width:35px;
+    height:35px;
+    position:absolute;
+    background: url(http://www.clipartqueen.com/image-files/red-lobed-fall-clipart-leaf.png);
+    background-size: 100% 100%;
+  }
+
